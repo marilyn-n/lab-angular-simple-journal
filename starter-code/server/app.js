@@ -29,8 +29,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(layouts);
 
-const index = require('./routes/index');
-app.use('/', index);
+const journalController = require ('./routes/api/journal-entries.js');
+app.use('/journal-entries', journalController);
 
 app.all('/*', function (req, res) {
   res.sendfile(__dirname + '/public/index.html');

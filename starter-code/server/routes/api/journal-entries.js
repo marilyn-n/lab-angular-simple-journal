@@ -2,6 +2,7 @@ const express       = require('express');
 const router        = express.Router();
 const Entry         = require('../../models/journal-entry');
 
+
 router.get('/journal-entries', (req, res, next) => {
   Entry.find({}, (err, entries) => {
     if (err) { return res.json(err).status(500); }

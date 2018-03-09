@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
+
 const EntrySchema = new Schema({
   title: {
     type: String,
@@ -17,3 +18,6 @@ const EntrySchema = new Schema({
 });
 
 module.exports = mongoose.model('JournalEntry', EntrySchema);
+
+
+  

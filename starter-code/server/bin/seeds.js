@@ -1,6 +1,11 @@
 const JournalEntry = require('../models/journal-entry');
 const mongoose     = require('mongoose');
-mongoose.connect('mongodb://localhost/journal-development');
+
+
+mongoose.connect('mongodb://localhost/journal-development')
+.then(console.log("Connected to dB!!"));
+
+//Limpia la colección de drones
 
 const entries = [
   {

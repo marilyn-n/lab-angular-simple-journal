@@ -1,17 +1,27 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { Routes, RouterModule} from '@angular/router';
+
+
 
 import { AppComponent } from './app.component';
 
+import { HttpModule} from '@angular/http';
+import { EntryListComponent } from './entry-list/entry-list.component';
+
+import { JournalService } from './services/journal.service';
+
+const routes = [
+  { path: '/entry-list', component: EntryListComponent}
+];
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EntryListComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     HttpModule
   ],
   providers: [],
