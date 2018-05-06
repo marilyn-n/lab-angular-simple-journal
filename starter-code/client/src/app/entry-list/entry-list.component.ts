@@ -8,7 +8,7 @@ import { JournalService } from '../services/journal.service';
 })
 export class EntryListComponent implements OnInit {
 
-  constructor(public JournalService: what ) { }
+  constructor( ) { }
  
   ngOnInit() {
 

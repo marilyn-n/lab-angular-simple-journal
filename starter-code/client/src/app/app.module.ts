@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule} from '@angular/router';
 
 
-
 import { AppComponent } from './app.component';
 
 import { HttpModule} from '@angular/http';
@@ -13,7 +12,8 @@ import { JournalService } from './services/journal.service';
 import { SingleEntryComponent } from './single-entry/single-entry.component';
 
 const routes = [
-  { path: '/entry-list', component: EntryListComponent}
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'entry-list', component: EntryListComponent}
 ];
 
 @NgModule({
@@ -24,7 +24,8 @@ const routes = [
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

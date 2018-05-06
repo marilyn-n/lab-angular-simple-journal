@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { JournalService } from '../services/journal.service';
 
 @Component({
   selector: 'app-single-entry',

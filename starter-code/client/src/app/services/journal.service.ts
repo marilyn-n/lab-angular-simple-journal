@@ -9,12 +9,13 @@ import 'rxjs/add/operator/map';
 export class JournalService {
 
   constructor(private http: Http) { }
-  getAllJournal() {
+
+getAllJournal() {
     return this.http.get('http://localhost:3000/api/journal-entries')
       .map(res => res.json());
   }
 
-  getSingleJournal() {
+getSingleJournal() {
     return this.http.get('http://localhost:3000/api/journal-entries/:id')
       .map(res => res.json());
 
