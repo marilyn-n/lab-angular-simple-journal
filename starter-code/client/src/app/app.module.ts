@@ -10,6 +10,7 @@ import { HttpModule} from '@angular/http';
 import { EntryListComponent } from './entry-list/entry-list.component';
 
 import { JournalService } from './services/journal.service';
+import { SingleEntryComponent } from './single-entry/single-entry.component';
 
 const routes = [
   { path: '/entry-list', component: EntryListComponent}
@@ -18,7 +19,8 @@ const routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    EntryListComponent
+    EntryListComponent,
+    SingleEntryComponent
   ],
   imports: [
     BrowserModule,
