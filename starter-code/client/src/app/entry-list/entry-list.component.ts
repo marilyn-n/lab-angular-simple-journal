@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { JournalService } from '../services/journal.service';
-import { Http } from '@angular/http';
+import {JournalService} from '../services/journal.service';
 
 @Component({
   selector: 'app-entry-list',
@@ -8,13 +7,12 @@ import { Http } from '@angular/http';
   styleUrls: ['./entry-list.component.css']
 })
 export class EntryListComponent implements OnInit {
-  entry: Array<Object> = [];
-  constructor(private entries: JournalService) { }
+  journalList: Array<Object>;
+  constructor( private journalService: JournalService) { }
 
   ngOnInit() {
-    this.entries.getAllJournal()
-    .subscribe(res => this.entry = res);
-
+    this.journalService.getAllJournal()
+    .subscribe(res => this.journalList = res);
   }
 
 }

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { JournalService } from '../services/journal.service';
+import {JournalService} from '../services/journal.service';
+import {ActivatedRoute} from '@angular/router';
+
+
 
 @Component({
   selector: 'app-single-entry',
@@ -8,9 +11,15 @@ import { JournalService } from '../services/journal.service';
 })
 export class SingleEntryComponent implements OnInit {
 
-  constructor() { }
+  single: Object;
+  constructor(private journalService: JournalService , private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.params
+    .subscribe((params) => {
+       this.journalService.getOneJournal(params.id)
+      .subscribe(singleJournal => this.single = singleJournal);
+    });
   }
 
 }
