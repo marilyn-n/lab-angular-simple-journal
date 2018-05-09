@@ -4,15 +4,15 @@ const router = express.Router();
 const Entry = require('../../models/journal-entry');
 
 
-router.get('/journal-entries', (req, res, next) => {
+router.get('/journal-entries', (req, res) => {
   Entry.find({}, (err, entries) => {
     if (err) { return res.json(err).status(500); }
-
+    console.log(entries);
     return res.json(entries);
   });
 });
 
-router.get('/journal-entries/:id', (req, res, next) => {
+router.get('/journal-entries/:id', (req, res) => {
   Entry.findById(req.params.id, (err, entry) => {
     if (err) { return res.json(err).status(500); }
     if (!entry) { return res.json(err).status(404); }
@@ -21,7 +21,7 @@ router.get('/journal-entries/:id', (req, res, next) => {
   });
 });
 
-router.post('/journal-entries', (req, res, next) => {
+router.post('/journal-entries', (req, res) => {
   const newEntry = new Entry({
     title: req.body.title,
     content: req.body.content,

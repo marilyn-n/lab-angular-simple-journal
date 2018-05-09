@@ -11,9 +11,11 @@ import { EntryListComponent } from './entry-list/entry-list.component';
 import { JournalService } from './services/journal.service';
 import { SingleEntryComponent } from './single-entry/single-entry.component';
 
-const routes = [
+const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'entry-list', component: EntryListComponent}
+  { path: 'entry-list',  component: EntryListComponent },
+  // { path: 'new',  component: EntryFormComponent },
+  // { path: ':id',  component: SingleEntryComponent }
 ];
 
 @NgModule({
@@ -27,7 +29,7 @@ const routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [JournalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

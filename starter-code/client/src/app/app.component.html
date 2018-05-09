@@ -3,12 +3,7 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
-  <nav>
-    
-       <a href="/"> Home </a> 
-       <br>
-       <a href="/entry-list"> Entry List </a> 
-    
-  </nav>
+
+  <a [routerLink]="['entry-list']"> Entry List </a>
 
   <router-outlet></router-outlet>

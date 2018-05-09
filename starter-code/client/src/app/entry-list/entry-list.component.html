@@ -1,3 +1,16 @@
 <p>
   entry-list works!
 </p>
+
+<ul>
+  <li *ngFor="let entry of entry">
+          <div>
+
+           <!-- <a [routerLink]="['../']">{{entry.title}}</a> -->
+              {{entry.date }}
+              {{entry.title}}
+          </div>
+  </li>
+</ul>
+
+<a [routerLink]="['/']"> Go Home </a>

@@ -18,6 +18,3 @@ const EntrySchema = new Schema({
 });
 
 module.exports = mongoose.model('JournalEntry', EntrySchema);
-
-
-  
