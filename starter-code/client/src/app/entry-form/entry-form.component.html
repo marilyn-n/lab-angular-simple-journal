@@ -1,0 +1,16 @@
+<p>
+  form works!
+</p>
+
+<form action="" (ngSubmit)="createEntry(myForm)" #myForm="ngForm">
+  <label for="">Insert title</label>
+  <input placeholder="journal title" type="text" name="title" [(ngModel)]="title" required>
+  <br>
+  <label for="">Content</label>
+  <input placeholder="type something" type="text" name="content" [(ngModel)]="content" required>
+  <br>
+  <input type="submit">
+</form>
+<br>
+<br>
+<button (click)="hideJournal">show and hide</button>
